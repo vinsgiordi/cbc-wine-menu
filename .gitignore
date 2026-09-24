@@ -1,0 +1,35 @@
+# WordPress local configuration
+wordpress/wp-config.php
+
+# WordPress uploads
+wordpress/wp-content/uploads/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Lando
+.lando/
+
+# Composer
+vendor/
+
+# Node
+node_modules/
+
+# Database dumps
+*.sql
+*.sql.gz
+*.dump
+
+# Logs
+*.log
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
