@@ -7,3 +7,8 @@ config:
   database: mariadb:10.11
   via: apache
   xdebug: false
+
+tooling:
+  wp:
+    service: appserver
+    cmd: wp --path=/app/wordpress
