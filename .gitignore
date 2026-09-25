@@ -1,7 +1,19 @@
-# WordPress local configuration
-wordpress/wp-config.php
+# Local agent brief (kept out of the public repository)
+AGENTS.md
 
-# WordPress uploads
+# Local WordPress installation (download via Lando / WP-CLI)
+# Track only our custom plugin; ignore core, themes, and other plugins.
+wordpress/*
+!wordpress/wp-content/
+wordpress/wp-content/*
+!wordpress/wp-content/plugins/
+wordpress/wp-content/plugins/*
+!wordpress/wp-content/plugins/cbc-wine-menu/
+
+# WordPress local configuration and generated files
+wordpress/wp-config.php
+wordpress/.htaccess
+wordpress/wp-content/debug.log
 wordpress/wp-content/uploads/
 
 # Environment files
