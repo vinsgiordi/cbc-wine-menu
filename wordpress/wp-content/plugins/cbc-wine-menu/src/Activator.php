@@ -9,6 +9,10 @@ declare(strict_types=1);
 
 namespace CBCWineMenu;
 
+use CBCWineMenu\PostTypes\Wine;
+use CBCWineMenu\Setup\DemoContent;
+use CBCWineMenu\Taxonomies\WineCategory;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -28,7 +32,10 @@ final class Activator {
 			return;
 		}
 
-		// Placeholder for future rewrite rules, DB tables, and default options.
+		Wine::register();
+		WineCategory::register();
+		DemoContent::maybe_seed();
+
 		flush_rewrite_rules();
 	}
 }
