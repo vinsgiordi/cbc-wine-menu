@@ -1,0 +1,277 @@
+# Copyright (C) 2026 Vincenzo Giordano
+# This file is distributed under the Proprietary.
+msgid ""
+msgstr ""
+"Project-Id-Version: CBC Wine Menu 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/cbc-wine-menu\n"
+"Last-Translator: Vincenzo Giordano <vincenzogiordano99@libero.it>\n"
+"Language-Team: Italian\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-25T10:42:20+00:00\n"
+"PO-Revision-Date: 2026-09-25 12:45+0200\n"
+"X-Generator: Cursor\n"
+"X-Domain: cbc-wine-menu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Plugin Name of the plugin
+#: cbc-wine-menu.php
+msgid "CBC Wine Menu"
+msgstr "CBC Wine Menu"
+
+#. Description of the plugin
+#: cbc-wine-menu.php
+msgid "Digital wine menu with QR-based table access and temporary guest sessions for CBC Cannavale."
+msgstr "Menu vini digitale con accesso ai tavoli tramite QR e sessioni temporanee per CBC Cannavale."
+
+#: src/Admin/WineMetaBox.php:34
+msgid "Winery"
+msgstr "Cantina"
+
+#: src/Admin/WineMetaBox.php:38
+msgid "Vintage"
+msgstr "Annata"
+
+#: src/Admin/WineMetaBox.php:42
+msgid "Region"
+msgstr "Regione"
+
+#: src/Admin/WineMetaBox.php:46
+msgid "Country"
+msgstr "Paese"
+
+#: src/Admin/WineMetaBox.php:50
+msgid "Grape variety"
+msgstr "Vitigno"
+
+#: src/Admin/WineMetaBox.php:54
+msgid "Appellation"
+msgstr "Denominazione"
+
+#: src/Admin/WineMetaBox.php:58
+msgid "Alcohol percentage"
+msgstr "Gradazione alcolica"
+
+#: src/Admin/WineMetaBox.php:62
+msgid "Bottle size"
+msgstr "Formato bottiglia"
+
+#: src/Admin/WineMetaBox.php:66
+msgid "Bottle price"
+msgstr "Prezzo bottiglia"
+
+#: src/Admin/WineMetaBox.php:70
+msgid "Glass price"
+msgstr "Prezzo calice"
+
+#: src/Admin/WineMetaBox.php:74
+msgid "Available"
+msgstr "Disponibile"
+
+#: src/Admin/WineMetaBox.php:78
+msgid "Display order"
+msgstr "Ordine di visualizzazione"
+
+#: src/Admin/WineMetaBox.php:112
+msgid "Wine details"
+msgstr "Dettagli vino"
+
+#: src/Admin/WineMetaBox.php:147
+msgid "Show this wine on the menu"
+msgstr "Mostra questo vino nel menu"
+
+#: src/PostTypes/Wine.php:39
+msgctxt "Post type general name"
+msgid "Wines"
+msgstr "Vini"
+
+#: src/PostTypes/Wine.php:40
+msgctxt "Post type singular name"
+msgid "Wine"
+msgstr "Vino"
+
+#: src/PostTypes/Wine.php:41
+msgctxt "Admin Menu text"
+msgid "Wines"
+msgstr "Vini"
+
+#: src/PostTypes/Wine.php:42
+msgctxt "Add New on Toolbar"
+msgid "Wine"
+msgstr "Vino"
+
+#: src/PostTypes/Wine.php:43
+msgid "Add New"
+msgstr "Aggiungi nuovo"
+
+#: src/PostTypes/Wine.php:44
+msgid "Add New Wine"
+msgstr "Aggiungi nuovo vino"
+
+#: src/PostTypes/Wine.php:45
+msgid "New Wine"
+msgstr "Nuovo vino"
+
+#: src/PostTypes/Wine.php:46
+msgid "Edit Wine"
+msgstr "Modifica vino"
+
+#: src/PostTypes/Wine.php:47
+msgid "View Wine"
+msgstr "Visualizza vino"
+
+#: src/PostTypes/Wine.php:48
+msgid "All Wines"
+msgstr "Tutti i vini"
+
+#: src/PostTypes/Wine.php:49
+msgid "Search Wines"
+msgstr "Cerca vini"
+
+#: src/PostTypes/Wine.php:50
+msgid "Parent Wines:"
+msgstr "Vini genitore:"
+
+#: src/PostTypes/Wine.php:51
+msgid "No wines found."
+msgstr "Nessun vino trovato."
+
+#: src/PostTypes/Wine.php:52
+msgid "No wines found in Trash."
+msgstr "Nessun vino trovato nel cestino."
+
+#: src/PostTypes/Wine.php:53
+msgid "Wine image"
+msgstr "Immagine del vino"
+
+#: src/PostTypes/Wine.php:54
+msgid "Set wine image"
+msgstr "Imposta immagine del vino"
+
+#: src/PostTypes/Wine.php:55
+msgid "Remove wine image"
+msgstr "Rimuovi immagine del vino"
+
+#: src/PostTypes/Wine.php:56
+msgid "Use as wine image"
+msgstr "Usa come immagine del vino"
+
+#: src/PostTypes/Wine.php:57
+msgid "Wine archives"
+msgstr "Archivio vini"
+
+#: src/PostTypes/Wine.php:58
+msgid "Insert into wine"
+msgstr "Inserisci nel vino"
+
+#: src/PostTypes/Wine.php:59
+msgid "Uploaded to this wine"
+msgstr "Caricato in questo vino"
+
+#: src/PostTypes/Wine.php:60
+msgid "Filter wines list"
+msgstr "Filtra elenco vini"
+
+#: src/PostTypes/Wine.php:61
+msgid "Wines list navigation"
+msgstr "Navigazione elenco vini"
+
+#: src/PostTypes/Wine.php:62
+msgid "Wines list"
+msgstr "Elenco vini"
+
+#: src/Setup/DemoContent.php:52
+msgid "Sparkling wines"
+msgstr "Spumanti"
+
+#: src/Setup/DemoContent.php:53
+msgid "Champagne"
+msgstr "Champagne"
+
+#: src/Setup/DemoContent.php:54
+msgid "White wines"
+msgstr "Vini bianchi"
+
+#: src/Setup/DemoContent.php:55
+msgid "Rosé wines"
+msgstr "Vini rosati"
+
+#: src/Setup/DemoContent.php:56
+msgid "Red wines"
+msgstr "Vini rossi"
+
+#: src/Setup/DemoContent.php:57
+msgid "Dessert wines"
+msgstr "Vini da dessert"
+
+#: src/Taxonomies/WineCategory.php:43
+msgctxt "Taxonomy general name"
+msgid "Wine Categories"
+msgstr "Categorie vini"
+
+#: src/Taxonomies/WineCategory.php:44
+msgctxt "Taxonomy singular name"
+msgid "Wine Category"
+msgstr "Categoria vino"
+
+#: src/Taxonomies/WineCategory.php:45
+msgid "Search Wine Categories"
+msgstr "Cerca categorie vini"
+
+#: src/Taxonomies/WineCategory.php:46
+msgid "Popular Wine Categories"
+msgstr "Categorie vini popolari"
+
+#: src/Taxonomies/WineCategory.php:47
+msgid "All Wine Categories"
+msgstr "Tutte le categorie vini"
+
+#: src/Taxonomies/WineCategory.php:48
+msgid "Parent Wine Category"
+msgstr "Categoria vino genitore"
+
+#: src/Taxonomies/WineCategory.php:49
+msgid "Parent Wine Category:"
+msgstr "Categoria vino genitore:"
+
+#: src/Taxonomies/WineCategory.php:50
+msgid "Edit Wine Category"
+msgstr "Modifica categoria vino"
+
+#: src/Taxonomies/WineCategory.php:51
+msgid "Update Wine Category"
+msgstr "Aggiorna categoria vino"
+
+#: src/Taxonomies/WineCategory.php:52
+msgid "Add New Wine Category"
+msgstr "Aggiungi nuova categoria vino"
+
+#: src/Taxonomies/WineCategory.php:53
+msgid "New Wine Category Name"
+msgstr "Nome nuova categoria vino"
+
+#: src/Taxonomies/WineCategory.php:54
+msgid "Separate wine categories with commas"
+msgstr "Separa le categorie vini con virgole"
+
+#: src/Taxonomies/WineCategory.php:55
+msgid "Add or remove wine categories"
+msgstr "Aggiungi o rimuovi categorie vini"
+
+#: src/Taxonomies/WineCategory.php:56
+msgid "Choose from the most used wine categories"
+msgstr "Scegli tra le categorie vini più usate"
+
+#: src/Taxonomies/WineCategory.php:57
+msgid "No wine categories found."
+msgstr "Nessuna categoria vino trovata."
+
+#: src/Taxonomies/WineCategory.php:58
+msgid "Categories"
+msgstr "Categorie"
+
+#: src/Taxonomies/WineCategory.php:59
+msgid "&larr; Back to Wine Categories"
+msgstr "&larr; Torna alle categorie vini"
