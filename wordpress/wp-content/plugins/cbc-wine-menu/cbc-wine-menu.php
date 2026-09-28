@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       CBC Wine Menu
  * Plugin URI:        https://github.com/vinsgiordi/cbc-wine-menu
- * Description:       Digital wine menu with QR-based table access and temporary guest sessions for CBC Cannavale.
+ * Description:       Digital wine menu with QR-based table access and temporary guest sessions for CB Cannavale.
  * Version:           0.1.0
  * Requires at least: 6.0
  * Requires PHP:      8.0

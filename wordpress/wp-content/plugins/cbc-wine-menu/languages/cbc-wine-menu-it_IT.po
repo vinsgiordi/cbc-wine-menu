@@ -16,13 +16,14 @@ msgstr ""
 
 #. Plugin Name of the plugin
 #: cbc-wine-menu.php
+#: src/Admin/SettingsPage.php:68
 msgid "CBC Wine Menu"
 msgstr "CBC Wine Menu"
 
 #. Description of the plugin
 #: cbc-wine-menu.php
-msgid "Digital wine menu with QR-based table access and temporary guest sessions for CBC Cannavale."
-msgstr "Menu vini digitale con accesso ai tavoli tramite QR e sessioni temporanee per CBC Cannavale."
+msgid "Digital wine menu with QR-based table access and temporary guest sessions for CB Cannavale."
+msgstr "Menu vini digitale con accesso ai tavoli tramite QR e sessioni temporanee per CB Cannavale."
 
 #: src/Admin/WineMetaBox.php:34
 msgid "Winery"
@@ -32,51 +33,53 @@ msgstr "Cantina"
 msgid "Vintage"
 msgstr "Annata"
 
-#: src/Admin/WineMetaBox.php:42
+#: src/Admin/WineMetaBox.php:48
 msgid "Region"
 msgstr "Regione"
 
-#: src/Admin/WineMetaBox.php:46
+#: src/Admin/WineMetaBox.php:52
 msgid "Country"
 msgstr "Paese"
 
-#: src/Admin/WineMetaBox.php:50
+#: src/Admin/WineMetaBox.php:56
 msgid "Grape variety"
 msgstr "Vitigno"
 
-#: src/Admin/WineMetaBox.php:54
+#: src/Admin/WineMetaBox.php:60
 msgid "Appellation"
 msgstr "Denominazione"
 
-#: src/Admin/WineMetaBox.php:58
+#: src/Admin/WineMetaBox.php:64
 msgid "Alcohol percentage"
 msgstr "Gradazione alcolica"
 
-#: src/Admin/WineMetaBox.php:62
+#: src/Admin/WineMetaBox.php:72
 msgid "Bottle size"
 msgstr "Formato bottiglia"
 
-#: src/Admin/WineMetaBox.php:66
+#: src/Admin/WineMetaBox.php:76
 msgid "Bottle price"
 msgstr "Prezzo bottiglia"
 
-#: src/Admin/WineMetaBox.php:70
+#: src/Admin/WineMetaBox.php:81
 msgid "Glass price"
 msgstr "Prezzo calice"
 
-#: src/Admin/WineMetaBox.php:74
+#: src/Admin/ExtraItemMetaBox.php:58
+#: src/Admin/WineMetaBox.php:105
 msgid "Available"
 msgstr "Disponibile"
 
-#: src/Admin/WineMetaBox.php:78
+#: src/Admin/ExtraItemMetaBox.php:62
+#: src/Admin/WineMetaBox.php:110
 msgid "Display order"
 msgstr "Ordine di visualizzazione"
 
-#: src/Admin/WineMetaBox.php:112
+#: src/Admin/WineMetaBox.php:144
 msgid "Wine details"
 msgstr "Dettagli vino"
 
-#: src/Admin/WineMetaBox.php:147
+#: src/Admin/WineMetaBox.php:186
 msgid "Show this wine on the menu"
 msgstr "Mostra questo vino nel menu"
 
@@ -100,6 +103,7 @@ msgctxt "Add New on Toolbar"
 msgid "Wine"
 msgstr "Vino"
 
+#: src/PostTypes/SimpleMenuPostType.php:31
 #: src/PostTypes/Wine.php:43
 msgid "Add New"
 msgstr "Aggiungi nuovo"
@@ -180,29 +184,21 @@ msgstr "Navigazione elenco vini"
 msgid "Wines list"
 msgstr "Elenco vini"
 
-#: src/Setup/DemoContent.php:53
+#: src/Setup/CatalogCategories.php:30
 msgid "Sparkling wines"
-msgstr "Spumanti"
+msgstr "Bollicine"
 
-#: src/Setup/DemoContent.php:54
-msgid "Champagne"
-msgstr "Champagne"
-
-#: src/Setup/DemoContent.php:55
+#: src/Setup/CatalogCategories.php:31
 msgid "White wines"
 msgstr "Vini bianchi"
 
-#: src/Setup/DemoContent.php:56
+#: src/Setup/CatalogCategories.php:32
 msgid "Rosé wines"
 msgstr "Vini rosati"
 
-#: src/Setup/DemoContent.php:57
+#: src/Setup/CatalogCategories.php:33
 msgid "Red wines"
 msgstr "Vini rossi"
-
-#: src/Setup/DemoContent.php:58
-msgid "Dessert wines"
-msgstr "Vini da dessert"
 
 #: src/Taxonomies/WineCategory.php:43
 msgctxt "Taxonomy general name"
@@ -277,60 +273,29 @@ msgstr "&larr; Torna alle categorie vini"
 #. Plugin URI of the plugin
 #: cbc-wine-menu.php
 msgid "https://github.com/vinsgiordi/cbc-wine-menu"
-msgstr ""
+msgstr "https://github.com/vinsgiordi/cbc-wine-menu"
 
 #. Author of the plugin
 #: cbc-wine-menu.php
 msgid "Vincenzo Giordano"
-msgstr ""
+msgstr "Vincenzo Giordano"
 
 #. Author URI of the plugin
 #: cbc-wine-menu.php
 msgid "https://github.com/vinsgiordi"
-msgstr ""
+msgstr "https://github.com/vinsgiordi"
 
-#: src/Tables/TableRoutes.php:132
+#: src/Tables/TableRoutes.php:133
 msgid "Unable to start a wine menu session. Please try again."
 msgstr "Impossibile avviare una sessione del menu vini. Riprova."
 
-#: src/Tables/TableRoutes.php:133
+#: src/Tables/TableRoutes.php:134
 msgid "Session error"
 msgstr "Errore di sessione"
 
-#: src/Tables/TableRoutes.php:194
+#: src/Tables/TableRoutes.php:239
 msgid "Template not found."
 msgstr "Template non trovato."
-
-#: templates/menu.php:22
-#: templates/menu.php:105
-msgid "Wine menu"
-msgstr "Menu vini"
-
-#. translators: %s: table number
-#: templates/menu.php:110
-#, php-format
-msgid "Table %s"
-msgstr "Tavolo %s"
-
-#: templates/menu.php:117
-msgid "No wines available yet."
-msgstr "Nessun vino disponibile al momento."
-
-#: templates/menu.php:132
-msgid "Unavailable"
-msgstr "Non disponibile"
-
-#. translators: %s: bottle price
-#: templates/menu.php:147
-#, php-format
-msgid "Bottle %s"
-msgstr "Bottiglia %s"
-
-#. translators: %s: glass price
-#: templates/menu.php:159
-#, php-format
-msgid "Glass %s"
-msgstr "Calice %s"
 
 #: templates/session-expired.php:18
 msgid "Session expired"
@@ -353,6 +318,244 @@ msgstr "Tavolo non valido"
 msgid "This table code is not valid. Please scan the QR code at your table."
 msgstr "Questo codice tavolo non è valido. Scansiona il QR code sul tuo tavolo."
 
-#: templates/menu.php:104
-msgid "CB Cannavale"
-msgstr ""
+#: src/Admin/WineMetaBox.php:40
+msgid "Leave empty if the vintage varies or is unknown."
+msgstr "Lasciare vuoto se l'annata varia o non è nota."
+
+#: src/Admin/WineMetaBox.php:43
+msgid "Ask staff for vintage"
+msgstr "Chiedere annata in sala"
+
+#: src/Admin/WineMetaBox.php:45
+msgid "Use when the printed list says to ask the waiting staff for the vintage."
+msgstr "Usare quando il listino indica di chiedere l'annata al personale di sala."
+
+#: src/Admin/WineMetaBox.php:68
+msgid "Service temperature"
+msgstr "Temperatura di servizio"
+
+#: src/Admin/WineMetaBox.php:85
+msgid "Vinification (Italian)"
+msgstr "Vinificazione (italiano)"
+
+#: src/Admin/WineMetaBox.php:90
+msgid "Vinification (English)"
+msgstr "Vinificazione (inglese)"
+
+#: src/Admin/WineMetaBox.php:95
+msgid "Characteristics (Italian)"
+msgstr "Caratteristiche (italiano)"
+
+#: src/Admin/WineMetaBox.php:100
+msgid "Characteristics (English)"
+msgstr "Caratteristiche (inglese)"
+
+#: src/Admin/WineMetaBox.php:162
+msgid "Required to publish: wine name, category, bottle price, and availability. A featured image is recommended for the digital menu."
+msgstr "Obbligatori per pubblicare: nome del vino, categoria, prezzo bottiglia e disponibilità. L'immagine in evidenza è consigliata per il menu digitale."
+
+#: src/Admin/WineMetaBox.php:183
+msgid "Ask waiting staff for the vintage year"
+msgstr "Chiedere l'annata al personale di sala"
+
+#: src/Admin/WineValidation.php:96
+msgid "This wine was saved as a draft because required information is missing:"
+msgstr "Il vino è stato salvato come bozza perché mancano informazioni obbligatorie:"
+
+#: src/Admin/WineValidation.php:117
+msgid "Wine name is required."
+msgstr "Il nome del vino è obbligatorio."
+
+#: src/Admin/WineValidation.php:123
+msgid "At least one wine category is required."
+msgstr "È obbligatoria almeno una categoria vino."
+
+#: src/Admin/WineValidation.php:129
+msgid "Bottle price is required."
+msgstr "Il prezzo bottiglia è obbligatorio."
+
+#: src/Admin/ExtraItemMetaBox.php:42
+msgid "Price"
+msgstr "Prezzo"
+
+#: src/Admin/ExtraItemMetaBox.php:46
+msgid "Size / format"
+msgstr "Formato"
+
+#: src/Admin/ExtraItemMetaBox.php:50
+msgid "Description (Italian)"
+msgstr "Descrizione (italiano)"
+
+#: src/Admin/ExtraItemMetaBox.php:54
+msgid "Description (English)"
+msgstr "Descrizione (inglese)"
+
+#: src/Admin/ExtraItemMetaBox.php:94
+msgid "Item details"
+msgstr "Dettagli voce"
+
+#: src/Admin/ExtraItemMetaBox.php:126
+msgid "Show this item on the menu"
+msgstr "Mostra questa voce nel menu"
+
+#: src/Admin/SettingsPage.php:67
+#: src/Admin/SettingsPage.php:122
+msgid "CBC Wine Menu Settings"
+msgstr "Impostazioni CBC Wine Menu"
+
+#: src/Admin/SettingsPage.php:127
+msgid "Footer text (Italian)"
+msgstr "Testo footer (italiano)"
+
+#: src/Admin/SettingsPage.php:131
+msgid "Footer text (English)"
+msgstr "Testo footer (inglese)"
+
+#: src/Admin/SettingsPage.php:135
+msgid "Facebook URL"
+msgstr "URL Facebook"
+
+#: src/Admin/SettingsPage.php:139
+msgid "Instagram URL"
+msgstr "URL Instagram"
+
+#: src/Admin/SettingsPage.php:143
+msgid "Cover charge (€)"
+msgstr "Coperto (€)"
+
+#: src/PostTypes/Beer.php:37
+msgctxt "Post type general name"
+msgid "Beers"
+msgstr "Birre"
+
+#: src/PostTypes/Beer.php:38
+msgctxt "Post type singular name"
+msgid "Beer"
+msgstr "Birra"
+
+#: src/PostTypes/Beer.php:39
+msgctxt "Admin Menu text"
+msgid "Beers"
+msgstr "Birre"
+
+#: src/PostTypes/Beer.php:40
+msgid "Add New Beer"
+msgstr "Aggiungi nuova birra"
+
+#: src/PostTypes/Beer.php:41
+msgid "Edit Beer"
+msgstr "Modifica birra"
+
+#: src/PostTypes/Beer.php:42
+msgid "View Beer"
+msgstr "Visualizza birra"
+
+#: src/PostTypes/Beer.php:43
+msgid "All Beers"
+msgstr "Tutte le birre"
+
+#: src/PostTypes/Beer.php:44
+msgid "Search Beers"
+msgstr "Cerca birre"
+
+#: src/PostTypes/Beer.php:45
+msgid "No beers found."
+msgstr "Nessuna birra trovata."
+
+#: src/PostTypes/Drink.php:37
+msgctxt "Post type general name"
+msgid "Drinks"
+msgstr "Drink"
+
+#: src/PostTypes/Drink.php:38
+msgctxt "Post type singular name"
+msgid "Drink"
+msgstr "Drink"
+
+#: src/PostTypes/Drink.php:39
+msgctxt "Admin Menu text"
+msgid "Drinks"
+msgstr "Drink"
+
+#: src/PostTypes/Drink.php:40
+msgid "Add New Drink"
+msgstr "Aggiungi nuovo drink"
+
+#: src/PostTypes/Drink.php:41
+msgid "Edit Drink"
+msgstr "Modifica drink"
+
+#: src/PostTypes/Drink.php:42
+msgid "View Drink"
+msgstr "Visualizza drink"
+
+#: src/PostTypes/Drink.php:43
+msgid "All Drinks"
+msgstr "Tutti i drink"
+
+#: src/PostTypes/Drink.php:44
+msgid "Search Drinks"
+msgstr "Cerca drink"
+
+#: src/PostTypes/Drink.php:45
+msgid "No drinks found."
+msgstr "Nessun drink trovato."
+
+#: src/PostTypes/WineGlass.php:37
+msgctxt "Post type general name"
+msgid "Wines by the glass"
+msgstr "Vini al calice"
+
+#: src/PostTypes/WineGlass.php:38
+msgctxt "Post type singular name"
+msgid "Wine by the glass"
+msgstr "Vino al calice"
+
+#: src/PostTypes/WineGlass.php:39
+msgctxt "Admin Menu text"
+msgid "Glasses"
+msgstr "Calici"
+
+#: src/PostTypes/WineGlass.php:40
+msgid "Add New Glass"
+msgstr "Aggiungi nuovo calice"
+
+#: src/PostTypes/WineGlass.php:41
+msgid "Edit Glass"
+msgstr "Modifica calice"
+
+#: src/PostTypes/WineGlass.php:42
+msgid "View Glass"
+msgstr "Visualizza calice"
+
+#: src/PostTypes/WineGlass.php:43
+msgid "All Glasses"
+msgstr "Tutti i calici"
+
+#: src/PostTypes/WineGlass.php:44
+msgid "Search Glasses"
+msgstr "Cerca calici"
+
+#: src/PostTypes/WineGlass.php:45
+msgid "No glasses found."
+msgstr "Nessun calice trovato."
+
+#: src/Admin/PluginMeta.php:58
+msgid "More information about CBC Wine Menu"
+msgstr "Ulteriori informazioni su CBC Wine Menu"
+
+#: src/Admin/PluginMeta.php:90
+msgid "Restaurant staff manage wines, glasses, drinks and beers from WordPress Admin. Guests scan a permanent table QR code, receive a 30-minute session, and browse the mobile-first menu in Italian or English."
+msgstr "Lo staff gestisce vini, calici, drink e birre da WordPress Admin. Gli ospiti scansionano il QR permanente del tavolo, ricevono una sessione di 30 minuti e consultano il menu mobile-first in italiano o inglese."
+
+#: src/Admin/PluginMeta.php:95
+msgid "Copy the plugin folder into wp-content/plugins/."
+msgstr "Copia la cartella del plugin in wp-content/plugins/."
+
+#: src/Admin/PluginMeta.php:96
+msgid "Activate CBC Wine Menu from Plugins."
+msgstr "Attiva CBC Wine Menu dalla pagina Plugin."
+
+#: src/Admin/PluginMeta.php:97
+msgid "Add or import wines, then configure footer and restaurant social links under Settings → CBC Wine Menu."
+msgstr "Aggiungi o importa i vini, poi configura footer e social del locale in Impostazioni → CBC Wine Menu."

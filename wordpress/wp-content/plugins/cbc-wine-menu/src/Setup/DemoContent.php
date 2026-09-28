@@ -30,7 +30,7 @@ final class DemoContent {
 	 * @return void
 	 */
 	public static function maybe_seed(): void {
-		if ( get_option( self::OPTION_KEY ) ) {
+		if ( get_option( 'cbc_wine_menu_catalog_imported_v1' ) || get_option( self::OPTION_KEY ) ) {
 			return;
 		}
 
@@ -49,28 +49,7 @@ final class DemoContent {
 	 * @return void
 	 */
 	private static function seed_categories(): void {
-		$categories = array(
-			'sparkling-wines' => __( 'Sparkling wines', 'cbc-wine-menu' ),
-			'champagne'       => __( 'Champagne', 'cbc-wine-menu' ),
-			'white-wines'     => __( 'White wines', 'cbc-wine-menu' ),
-			'rose-wines'      => __( 'Rosé wines', 'cbc-wine-menu' ),
-			'red-wines'       => __( 'Red wines', 'cbc-wine-menu' ),
-			'dessert-wines'   => __( 'Dessert wines', 'cbc-wine-menu' ),
-		);
-
-		foreach ( $categories as $slug => $name ) {
-			if ( term_exists( $slug, WineCategory::TAXONOMY ) ) {
-				continue;
-			}
-
-			wp_insert_term(
-				$name,
-				WineCategory::TAXONOMY,
-				array(
-					'slug' => $slug,
-				)
-			);
-		}
+		\CBCWineMenu\Setup\CatalogCategories::ensure();
 	}
 
 	/**

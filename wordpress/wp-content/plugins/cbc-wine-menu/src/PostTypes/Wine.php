@@ -9,6 +9,8 @@ declare(strict_types=1);
 
 namespace CBCWineMenu\PostTypes;
 
+use CBCWineMenu\Admin\MenuIcons;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
@@ -74,7 +76,7 @@ final class Wine {
 			'has_archive'         => false,
 			'hierarchical'        => false,
 			'menu_position'       => 25,
-			'menu_icon'           => 'dashicons-food',
+			'menu_icon'           => MenuIcons::get( 'wine-bottle.svg', 'dashicons-food' ),
 			'supports'            => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
 			'show_in_rest'        => true,
 			'exclude_from_search' => true,

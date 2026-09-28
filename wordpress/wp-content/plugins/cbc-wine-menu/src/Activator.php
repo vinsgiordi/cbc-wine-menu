@@ -9,9 +9,14 @@ declare(strict_types=1);
 
 namespace CBCWineMenu;
 
+use CBCWineMenu\PostTypes\Beer;
+use CBCWineMenu\PostTypes\Drink;
 use CBCWineMenu\PostTypes\Wine;
+use CBCWineMenu\PostTypes\WineGlass;
 use CBCWineMenu\Sessions\SessionSchema;
+use CBCWineMenu\Setup\CatalogImporter;
 use CBCWineMenu\Setup\DemoContent;
+use CBCWineMenu\Setup\ExtrasImporter;
 use CBCWineMenu\Tables\TableRoutes;
 use CBCWineMenu\Taxonomies\WineCategory;
 
@@ -35,12 +40,17 @@ final class Activator {
 		}
 
 		Wine::register();
+		WineGlass::register();
+		Drink::register();
+		Beer::register();
 		WineCategory::register();
 		SessionSchema::create_table();
 		TableRoutes::register_rewrites();
+		CatalogImporter::maybe_import();
+		ExtrasImporter::maybe_import();
 		DemoContent::maybe_seed();
 
-		update_option( 'cbc_wine_menu_db_version', '1', false );
+		update_option( 'cbc_wine_menu_db_version', '2', false );
 		flush_rewrite_rules();
 	}
 }
