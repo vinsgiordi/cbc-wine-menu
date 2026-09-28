@@ -16,7 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use CBCWineMenu\Admin\WineMetaBox;
 use CBCWineMenu\Config;
-use CBCWineMenu\PublicFacing\MenuLanguage;
 
 $table_id   = isset( $session['table_id'] ) ? (string) $session['table_id'] : '';
 $lang       = isset( $lang ) ? (string) $lang : 'it';
@@ -410,8 +409,8 @@ $html_lang = $is_english ? 'en' : 'it';
 	<main class="wrap">
 		<div class="topbar">
 			<div class="lang" aria-label="Language">
-				<a class="<?php echo $is_english ? '' : 'is-active'; ?>" href="<?php echo esc_url( MenuLanguage::url_for( 'it' ) ); ?>">IT</a>
-				<a class="<?php echo $is_english ? 'is-active' : ''; ?>" href="<?php echo esc_url( MenuLanguage::url_for( 'en' ) ); ?>">EN</a>
+				<a class="<?php echo $is_english ? '' : 'is-active'; ?>" href="<?php echo esc_url( \CBCWineMenu\PublicFacing\MenuLanguage::url_for( 'it' ) ); ?>">IT</a>
+				<a class="<?php echo $is_english ? 'is-active' : ''; ?>" href="<?php echo esc_url( \CBCWineMenu\PublicFacing\MenuLanguage::url_for( 'en' ) ); ?>">EN</a>
 			</div>
 			<p class="table-meta" style="margin:0;">
 				<?php echo esc_html( sprintf( $labels['table'], $table_id ) ); ?>
