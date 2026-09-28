@@ -1,6 +1,9 @@
 # Local agent brief (kept out of the public repository)
 AGENTS.md
 
+# Local custom admin icons (kept out of the public repository)
+wordpress/wp-content/plugins/cbc-wine-menu/assets/icons/
+
 # Local WordPress installation (download via Lando / WP-CLI)
 # Track only our custom plugin; ignore core, themes, and other plugins.
 wordpress/*
@@ -45,3 +48,6 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+# PDF files
+*.pdf

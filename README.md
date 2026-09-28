@@ -1,6 +1,6 @@
 # CBC Wine Menu
 
-This repository contains a custom WordPress plugin for [CBC Cannavale](https://cbcannavale.it/), a restaurant that needs a digital wine list accessible from QR codes placed on tables.
+This repository contains a custom WordPress plugin for [CB Cannavale](https://cbcannavale.it/), a restaurant that needs a digital wine list accessible from QR codes placed on tables.
 
 The solution is developed as a portable WordPress plugin so it can later be installed on the existing production website without depending on the production theme or hosting details during early development.
 

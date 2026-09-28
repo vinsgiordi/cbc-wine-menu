@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace CBCWineMenu\Tables;
 
 use CBCWineMenu\Config;
+use CBCWineMenu\PublicFacing\MenuLanguage;
 use CBCWineMenu\Sessions\SessionService;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -158,11 +159,50 @@ final class TableRoutes {
 
 		status_header( 200 );
 
+		MenuLanguage::persist_from_request();
+		$lang = MenuLanguage::current();
+
 		$wines = get_posts(
 			array(
 				'post_type'      => 'wine',
 				'post_status'    => 'publish',
-				'posts_per_page' => 50,
+				'posts_per_page' => -1,
+				'orderby'        => array(
+					'menu_order' => 'ASC',
+					'title'      => 'ASC',
+				),
+			)
+		);
+
+		$glasses = get_posts(
+			array(
+				'post_type'      => \CBCWineMenu\PostTypes\WineGlass::POST_TYPE,
+				'post_status'    => 'publish',
+				'posts_per_page' => -1,
+				'orderby'        => array(
+					'menu_order' => 'ASC',
+					'title'      => 'ASC',
+				),
+			)
+		);
+
+		$drinks = get_posts(
+			array(
+				'post_type'      => \CBCWineMenu\PostTypes\Drink::POST_TYPE,
+				'post_status'    => 'publish',
+				'posts_per_page' => -1,
+				'orderby'        => array(
+					'menu_order' => 'ASC',
+					'title'      => 'ASC',
+				),
+			)
+		);
+
+		$beers = get_posts(
+			array(
+				'post_type'      => \CBCWineMenu\PostTypes\Beer::POST_TYPE,
+				'post_status'    => 'publish',
+				'posts_per_page' => -1,
 				'orderby'        => array(
 					'menu_order' => 'ASC',
 					'title'      => 'ASC',
@@ -173,8 +213,13 @@ final class TableRoutes {
 		$this->render_template(
 			'menu.php',
 			array(
-				'session' => $session,
-				'wines'   => $wines,
+				'session'  => $session,
+				'wines'    => $wines,
+				'glasses'  => $glasses,
+				'drinks'   => $drinks,
+				'beers'    => $beers,
+				'settings' => \CBCWineMenu\Admin\SettingsPage::get(),
+				'lang'     => $lang,
 			)
 		);
 		exit;

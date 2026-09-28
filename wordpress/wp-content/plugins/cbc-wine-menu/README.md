@@ -1,6 +1,6 @@
 # CBC Wine Menu Plugin
 
-Custom WordPress plugin for the CBC Cannavale digital wine menu.
+Custom WordPress plugin for the CB Cannavale digital wine menu.
 
 This directory contains the portable plugin that will later be installed on the production WordPress website.
 

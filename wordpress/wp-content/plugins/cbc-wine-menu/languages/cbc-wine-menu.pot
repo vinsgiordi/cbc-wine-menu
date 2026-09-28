@@ -9,13 +9,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-28T09:41:33+00:00\n"
+"POT-Creation-Date: 2026-09-28T10:39:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: cbc-wine-menu\n"
 
 #. Plugin Name of the plugin
 #: cbc-wine-menu.php
+#: src/Admin/SettingsPage.php:68
 msgid "CBC Wine Menu"
 msgstr ""
 
@@ -26,7 +27,7 @@ msgstr ""
 
 #. Description of the plugin
 #: cbc-wine-menu.php
-msgid "Digital wine menu with QR-based table access and temporary guest sessions for CBC Cannavale."
+msgid "Digital wine menu with QR-based table access and temporary guest sessions for CB Cannavale."
 msgstr ""
 
 #. Author of the plugin
@@ -39,6 +40,81 @@ msgstr ""
 msgid "https://github.com/vinsgiordi"
 msgstr ""
 
+#: src/Admin/ExtraItemMetaBox.php:42
+msgid "Price"
+msgstr ""
+
+#: src/Admin/ExtraItemMetaBox.php:46
+msgid "Size / format"
+msgstr ""
+
+#: src/Admin/ExtraItemMetaBox.php:50
+msgid "Description (Italian)"
+msgstr ""
+
+#: src/Admin/ExtraItemMetaBox.php:54
+msgid "Description (English)"
+msgstr ""
+
+#: src/Admin/ExtraItemMetaBox.php:58
+#: src/Admin/WineMetaBox.php:105
+msgid "Available"
+msgstr ""
+
+#: src/Admin/ExtraItemMetaBox.php:62
+#: src/Admin/WineMetaBox.php:110
+msgid "Display order"
+msgstr ""
+
+#: src/Admin/ExtraItemMetaBox.php:94
+msgid "Item details"
+msgstr ""
+
+#: src/Admin/ExtraItemMetaBox.php:126
+msgid "Show this item on the menu"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:67
+#: src/Admin/SettingsPage.php:122
+msgid "CBC Wine Menu Settings"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:127
+msgid "Footer text (Italian)"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:131
+msgid "Footer text (English)"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:135
+msgid "Facebook URL"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:139
+msgid "Instagram URL"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:143
+msgid "Cover charge (€)"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:147
+msgid "Designer credit"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:151
+msgid "Show “Designed by” line in the menu footer"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:156
+msgid "Designer name"
+msgstr ""
+
+#: src/Admin/SettingsPage.php:160
+msgid "Designer Instagram (username without @)"
+msgstr ""
+
 #: src/Admin/WineMetaBox.php:34
 msgid "Winery"
 msgstr ""
@@ -47,52 +123,183 @@ msgstr ""
 msgid "Vintage"
 msgstr ""
 
-#: src/Admin/WineMetaBox.php:42
+#: src/Admin/WineMetaBox.php:40
+msgid "Leave empty if the vintage varies or is unknown."
+msgstr ""
+
+#: src/Admin/WineMetaBox.php:43
+msgid "Ask staff for vintage"
+msgstr ""
+
+#: src/Admin/WineMetaBox.php:45
+msgid "Use when the printed list says to ask the waiting staff for the vintage."
+msgstr ""
+
+#: src/Admin/WineMetaBox.php:48
 msgid "Region"
 msgstr ""
 
-#: src/Admin/WineMetaBox.php:46
+#: src/Admin/WineMetaBox.php:52
 msgid "Country"
 msgstr ""
 
-#: src/Admin/WineMetaBox.php:50
+#: src/Admin/WineMetaBox.php:56
 msgid "Grape variety"
 msgstr ""
 
-#: src/Admin/WineMetaBox.php:54
+#: src/Admin/WineMetaBox.php:60
 msgid "Appellation"
 msgstr ""
 
-#: src/Admin/WineMetaBox.php:58
+#: src/Admin/WineMetaBox.php:64
 msgid "Alcohol percentage"
 msgstr ""
 
-#: src/Admin/WineMetaBox.php:62
+#: src/Admin/WineMetaBox.php:68
+msgid "Service temperature"
+msgstr ""
+
+#: src/Admin/WineMetaBox.php:72
 msgid "Bottle size"
 msgstr ""
 
-#: src/Admin/WineMetaBox.php:66
+#: src/Admin/WineMetaBox.php:76
 msgid "Bottle price"
 msgstr ""
 
-#: src/Admin/WineMetaBox.php:70
+#: src/Admin/WineMetaBox.php:81
 msgid "Glass price"
 msgstr ""
 
-#: src/Admin/WineMetaBox.php:74
-msgid "Available"
+#: src/Admin/WineMetaBox.php:85
+msgid "Vinification (Italian)"
 msgstr ""
 
-#: src/Admin/WineMetaBox.php:78
-msgid "Display order"
+#: src/Admin/WineMetaBox.php:90
+msgid "Vinification (English)"
 msgstr ""
 
-#: src/Admin/WineMetaBox.php:112
+#: src/Admin/WineMetaBox.php:95
+msgid "Characteristics (Italian)"
+msgstr ""
+
+#: src/Admin/WineMetaBox.php:100
+msgid "Characteristics (English)"
+msgstr ""
+
+#: src/Admin/WineMetaBox.php:144
 msgid "Wine details"
 msgstr ""
 
-#: src/Admin/WineMetaBox.php:147
+#: src/Admin/WineMetaBox.php:162
+msgid "Required to publish: wine name, category, bottle price, and availability. A featured image is recommended for the digital menu."
+msgstr ""
+
+#: src/Admin/WineMetaBox.php:183
+msgid "Ask waiting staff for the vintage year"
+msgstr ""
+
+#: src/Admin/WineMetaBox.php:186
 msgid "Show this wine on the menu"
+msgstr ""
+
+#: src/Admin/WineValidation.php:96
+msgid "This wine was saved as a draft because required information is missing:"
+msgstr ""
+
+#: src/Admin/WineValidation.php:117
+msgid "Wine name is required."
+msgstr ""
+
+#: src/Admin/WineValidation.php:123
+msgid "At least one wine category is required."
+msgstr ""
+
+#: src/Admin/WineValidation.php:129
+msgid "Bottle price is required."
+msgstr ""
+
+#: src/PostTypes/Beer.php:37
+msgctxt "Post type general name"
+msgid "Beers"
+msgstr ""
+
+#: src/PostTypes/Beer.php:38
+msgctxt "Post type singular name"
+msgid "Beer"
+msgstr ""
+
+#: src/PostTypes/Beer.php:39
+msgctxt "Admin Menu text"
+msgid "Beers"
+msgstr ""
+
+#: src/PostTypes/Beer.php:40
+msgid "Add New Beer"
+msgstr ""
+
+#: src/PostTypes/Beer.php:41
+msgid "Edit Beer"
+msgstr ""
+
+#: src/PostTypes/Beer.php:42
+msgid "View Beer"
+msgstr ""
+
+#: src/PostTypes/Beer.php:43
+msgid "All Beers"
+msgstr ""
+
+#: src/PostTypes/Beer.php:44
+msgid "Search Beers"
+msgstr ""
+
+#: src/PostTypes/Beer.php:45
+msgid "No beers found."
+msgstr ""
+
+#: src/PostTypes/Drink.php:37
+msgctxt "Post type general name"
+msgid "Drinks"
+msgstr ""
+
+#: src/PostTypes/Drink.php:38
+msgctxt "Post type singular name"
+msgid "Drink"
+msgstr ""
+
+#: src/PostTypes/Drink.php:39
+msgctxt "Admin Menu text"
+msgid "Drinks"
+msgstr ""
+
+#: src/PostTypes/Drink.php:40
+msgid "Add New Drink"
+msgstr ""
+
+#: src/PostTypes/Drink.php:41
+msgid "Edit Drink"
+msgstr ""
+
+#: src/PostTypes/Drink.php:42
+msgid "View Drink"
+msgstr ""
+
+#: src/PostTypes/Drink.php:43
+msgid "All Drinks"
+msgstr ""
+
+#: src/PostTypes/Drink.php:44
+msgid "Search Drinks"
+msgstr ""
+
+#: src/PostTypes/Drink.php:45
+msgid "No drinks found."
+msgstr ""
+
+#: src/PostTypes/SimpleMenuPostType.php:31
+#: src/PostTypes/Wine.php:43
+msgid "Add New"
 msgstr ""
 
 #: src/PostTypes/Wine.php:39
@@ -113,10 +320,6 @@ msgstr ""
 #: src/PostTypes/Wine.php:42
 msgctxt "Add New on Toolbar"
 msgid "Wine"
-msgstr ""
-
-#: src/PostTypes/Wine.php:43
-msgid "Add New"
 msgstr ""
 
 #: src/PostTypes/Wine.php:44
@@ -195,39 +398,70 @@ msgstr ""
 msgid "Wines list"
 msgstr ""
 
-#: src/Setup/DemoContent.php:53
+#: src/PostTypes/WineGlass.php:37
+msgctxt "Post type general name"
+msgid "Wines by the glass"
+msgstr ""
+
+#: src/PostTypes/WineGlass.php:38
+msgctxt "Post type singular name"
+msgid "Wine by the glass"
+msgstr ""
+
+#: src/PostTypes/WineGlass.php:39
+msgctxt "Admin Menu text"
+msgid "Glasses"
+msgstr ""
+
+#: src/PostTypes/WineGlass.php:40
+msgid "Add New Glass"
+msgstr ""
+
+#: src/PostTypes/WineGlass.php:41
+msgid "Edit Glass"
+msgstr ""
+
+#: src/PostTypes/WineGlass.php:42
+msgid "View Glass"
+msgstr ""
+
+#: src/PostTypes/WineGlass.php:43
+msgid "All Glasses"
+msgstr ""
+
+#: src/PostTypes/WineGlass.php:44
+msgid "Search Glasses"
+msgstr ""
+
+#: src/PostTypes/WineGlass.php:45
+msgid "No glasses found."
+msgstr ""
+
+#: src/Setup/CatalogCategories.php:30
 msgid "Sparkling wines"
 msgstr ""
 
-#: src/Setup/DemoContent.php:54
-msgid "Champagne"
-msgstr ""
-
-#: src/Setup/DemoContent.php:55
+#: src/Setup/CatalogCategories.php:31
 msgid "White wines"
 msgstr ""
 
-#: src/Setup/DemoContent.php:56
+#: src/Setup/CatalogCategories.php:32
 msgid "Rosé wines"
 msgstr ""
 
-#: src/Setup/DemoContent.php:57
+#: src/Setup/CatalogCategories.php:33
 msgid "Red wines"
 msgstr ""
 
-#: src/Setup/DemoContent.php:58
-msgid "Dessert wines"
-msgstr ""
-
-#: src/Tables/TableRoutes.php:132
+#: src/Tables/TableRoutes.php:133
 msgid "Unable to start a wine menu session. Please try again."
 msgstr ""
 
-#: src/Tables/TableRoutes.php:133
+#: src/Tables/TableRoutes.php:134
 msgid "Session error"
 msgstr ""
 
-#: src/Tables/TableRoutes.php:194
+#: src/Tables/TableRoutes.php:239
 msgid "Template not found."
 msgstr ""
 
@@ -299,41 +533,6 @@ msgstr ""
 
 #: src/Taxonomies/WineCategory.php:59
 msgid "&larr; Back to Wine Categories"
-msgstr ""
-
-#: templates/menu.php:22
-#: templates/menu.php:105
-msgid "Wine menu"
-msgstr ""
-
-#: templates/menu.php:104
-msgid "CB Cannavale"
-msgstr ""
-
-#. translators: %s: table number
-#: templates/menu.php:110
-#, php-format
-msgid "Table %s"
-msgstr ""
-
-#: templates/menu.php:117
-msgid "No wines available yet."
-msgstr ""
-
-#: templates/menu.php:132
-msgid "Unavailable"
-msgstr ""
-
-#. translators: %s: bottle price
-#: templates/menu.php:147
-#, php-format
-msgid "Bottle %s"
-msgstr ""
-
-#. translators: %s: glass price
-#: templates/menu.php:159
-#, php-format
-msgid "Glass %s"
 msgstr ""
 
 #: templates/session-expired.php:18

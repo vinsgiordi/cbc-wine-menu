@@ -24,57 +24,89 @@ final class WineMetaBox {
 	public const NONCE_NAME   = 'cbc_wine_menu_wine_meta_nonce';
 
 	/**
-	 * Meta keys used by the wine content model.
+	 * Meta field definitions.
 	 *
-	 * @return array<string, array{label: string, type: string}>
+	 * @return array<string, array{label: string, type: string, required?: bool, rows?: int, help?: string}>
 	 */
 	public static function fields(): array {
 		return array(
-			'winery'             => array(
+			'winery'              => array(
 				'label' => __( 'Winery', 'cbc-wine-menu' ),
 				'type'  => 'text',
 			),
-			'vintage'            => array(
+			'vintage'             => array(
 				'label' => __( 'Vintage', 'cbc-wine-menu' ),
 				'type'  => 'text',
+				'help'  => __( 'Leave empty if the vintage varies or is unknown.', 'cbc-wine-menu' ),
 			),
-			'region'             => array(
+			'ask_for_vintage'     => array(
+				'label' => __( 'Ask staff for vintage', 'cbc-wine-menu' ),
+				'type'  => 'checkbox',
+				'help'  => __( 'Use when the printed list says to ask the waiting staff for the vintage.', 'cbc-wine-menu' ),
+			),
+			'region'              => array(
 				'label' => __( 'Region', 'cbc-wine-menu' ),
 				'type'  => 'text',
 			),
-			'country'            => array(
+			'country'             => array(
 				'label' => __( 'Country', 'cbc-wine-menu' ),
 				'type'  => 'text',
 			),
-			'grape_variety'      => array(
+			'grape_variety'       => array(
 				'label' => __( 'Grape variety', 'cbc-wine-menu' ),
 				'type'  => 'text',
 			),
-			'appellation'        => array(
+			'appellation'         => array(
 				'label' => __( 'Appellation', 'cbc-wine-menu' ),
 				'type'  => 'text',
 			),
-			'alcohol_percentage' => array(
+			'alcohol_percentage'  => array(
 				'label' => __( 'Alcohol percentage', 'cbc-wine-menu' ),
 				'type'  => 'text',
 			),
-			'bottle_size'        => array(
+			'service_temperature' => array(
+				'label' => __( 'Service temperature', 'cbc-wine-menu' ),
+				'type'  => 'text',
+			),
+			'bottle_size'         => array(
 				'label' => __( 'Bottle size', 'cbc-wine-menu' ),
 				'type'  => 'text',
 			),
-			'bottle_price'       => array(
-				'label' => __( 'Bottle price', 'cbc-wine-menu' ),
-				'type'  => 'text',
+			'bottle_price'        => array(
+				'label'    => __( 'Bottle price', 'cbc-wine-menu' ),
+				'type'     => 'text',
+				'required' => true,
 			),
-			'glass_price'        => array(
+			'glass_price'         => array(
 				'label' => __( 'Glass price', 'cbc-wine-menu' ),
 				'type'  => 'text',
 			),
-			'is_available'       => array(
-				'label' => __( 'Available', 'cbc-wine-menu' ),
-				'type'  => 'checkbox',
+			'vinification_it'     => array(
+				'label' => __( 'Vinification (Italian)', 'cbc-wine-menu' ),
+				'type'  => 'textarea',
+				'rows'  => 5,
 			),
-			'display_order'      => array(
+			'vinification_en'     => array(
+				'label' => __( 'Vinification (English)', 'cbc-wine-menu' ),
+				'type'  => 'textarea',
+				'rows'  => 5,
+			),
+			'characteristics_it'  => array(
+				'label' => __( 'Characteristics (Italian)', 'cbc-wine-menu' ),
+				'type'  => 'textarea',
+				'rows'  => 5,
+			),
+			'characteristics_en'  => array(
+				'label' => __( 'Characteristics (English)', 'cbc-wine-menu' ),
+				'type'  => 'textarea',
+				'rows'  => 5,
+			),
+			'is_available'        => array(
+				'label'    => __( 'Available', 'cbc-wine-menu' ),
+				'type'     => 'checkbox',
+				'required' => true,
+			),
+			'display_order'       => array(
 				'label' => __( 'Display order', 'cbc-wine-menu' ),
 				'type'  => 'number',
 			),
@@ -126,25 +158,49 @@ final class WineMetaBox {
 	public function render( \WP_Post $post ): void {
 		wp_nonce_field( self::NONCE_ACTION, self::NONCE_NAME );
 
+		echo '<p class="description">';
+		echo esc_html__( 'Required to publish: wine name, category, bottle price, and availability. A featured image is recommended for the digital menu.', 'cbc-wine-menu' );
+		echo '</p>';
+
 		echo '<table class="form-table" role="presentation"><tbody>';
 
 		foreach ( self::fields() as $field => $config ) {
-			$key   = self::meta_key( $field );
-			$value = get_post_meta( $post->ID, $key, true );
-			$id    = 'cbc_wine_' . $field;
+			$key      = self::meta_key( $field );
+			$value    = get_post_meta( $post->ID, $key, true );
+			$id       = 'cbc_wine_' . $field;
+			$required = ! empty( $config['required'] );
 
 			echo '<tr>';
-			echo '<th scope="row"><label for="' . esc_attr( $id ) . '">' . esc_html( $config['label'] ) . '</label></th>';
-			echo '<td>';
+			echo '<th scope="row"><label for="' . esc_attr( $id ) . '">' . esc_html( $config['label'] );
+			if ( $required && 'checkbox' !== $config['type'] ) {
+				echo ' <span class="required">*</span>';
+			}
+			echo '</label></th><td>';
 
 			if ( 'checkbox' === $config['type'] ) {
-				$checked = ( '' === $value || '1' === (string) $value );
+				if ( 'ask_for_vintage' === $field ) {
+					$checked = ( '1' === (string) $value );
+					$label   = __( 'Ask waiting staff for the vintage year', 'cbc-wine-menu' );
+				} else {
+					$checked = ( '' === $value || '1' === (string) $value );
+					$label   = __( 'Show this wine on the menu', 'cbc-wine-menu' );
+				}
+
 				printf(
 					'<label><input type="checkbox" id="%1$s" name="%2$s" value="1" %3$s /> %4$s</label>',
 					esc_attr( $id ),
 					esc_attr( $key ),
 					checked( $checked, true, false ),
-					esc_html__( 'Show this wine on the menu', 'cbc-wine-menu' )
+					esc_html( $label )
+				);
+			} elseif ( 'textarea' === $config['type'] ) {
+				$rows = isset( $config['rows'] ) ? (int) $config['rows'] : 4;
+				printf(
+					'<textarea class="large-text" id="%1$s" name="%2$s" rows="%3$d">%4$s</textarea>',
+					esc_attr( $id ),
+					esc_attr( $key ),
+					$rows,
+					esc_textarea( is_scalar( $value ) ? (string) $value : '' )
 				);
 			} elseif ( 'number' === $config['type'] ) {
 				printf(
@@ -155,11 +211,16 @@ final class WineMetaBox {
 				);
 			} else {
 				printf(
-					'<input type="text" class="regular-text" id="%1$s" name="%2$s" value="%3$s" />',
+					'<input type="text" class="regular-text" id="%1$s" name="%2$s" value="%3$s"%4$s />',
 					esc_attr( $id ),
 					esc_attr( $key ),
-					esc_attr( is_scalar( $value ) ? (string) $value : '' )
+					esc_attr( is_scalar( $value ) ? (string) $value : '' ),
+					$required ? ' required' : ''
 				);
+			}
+
+			if ( ! empty( $config['help'] ) ) {
+				echo '<p class="description">' . esc_html( $config['help'] ) . '</p>';
 			}
 
 			echo '</td></tr>';
@@ -202,8 +263,7 @@ final class WineMetaBox {
 			$key = self::meta_key( $field );
 
 			if ( 'checkbox' === $config['type'] ) {
-				$available = isset( $_POST[ $key ] ) ? '1' : '0';
-				update_post_meta( $post_id, $key, $available );
+				update_post_meta( $post_id, $key, isset( $_POST[ $key ] ) ? '1' : '0' );
 				continue;
 			}
 
@@ -215,6 +275,11 @@ final class WineMetaBox {
 
 			if ( 'number' === $config['type'] ) {
 				update_post_meta( $post_id, $key, (string) absint( $raw ) );
+				continue;
+			}
+
+			if ( 'textarea' === $config['type'] ) {
+				update_post_meta( $post_id, $key, sanitize_textarea_field( $raw ) );
 				continue;
 			}
 
