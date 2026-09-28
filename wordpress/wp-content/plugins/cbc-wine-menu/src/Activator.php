@@ -10,7 +10,9 @@ declare(strict_types=1);
 namespace CBCWineMenu;
 
 use CBCWineMenu\PostTypes\Wine;
+use CBCWineMenu\Sessions\SessionSchema;
 use CBCWineMenu\Setup\DemoContent;
+use CBCWineMenu\Tables\TableRoutes;
 use CBCWineMenu\Taxonomies\WineCategory;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -34,8 +36,11 @@ final class Activator {
 
 		Wine::register();
 		WineCategory::register();
+		SessionSchema::create_table();
+		TableRoutes::register_rewrites();
 		DemoContent::maybe_seed();
 
+		update_option( 'cbc_wine_menu_db_version', '1', false );
 		flush_rewrite_rules();
 	}
 }
