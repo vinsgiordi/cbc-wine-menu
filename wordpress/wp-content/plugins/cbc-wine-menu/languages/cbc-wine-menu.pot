@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-25T10:42:20+00:00\n"
+"POT-Creation-Date: 2026-09-28T09:41:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: cbc-wine-menu\n"
@@ -195,28 +195,40 @@ msgstr ""
 msgid "Wines list"
 msgstr ""
 
-#: src/Setup/DemoContent.php:52
+#: src/Setup/DemoContent.php:53
 msgid "Sparkling wines"
 msgstr ""
 
-#: src/Setup/DemoContent.php:53
+#: src/Setup/DemoContent.php:54
 msgid "Champagne"
 msgstr ""
 
-#: src/Setup/DemoContent.php:54
+#: src/Setup/DemoContent.php:55
 msgid "White wines"
 msgstr ""
 
-#: src/Setup/DemoContent.php:55
+#: src/Setup/DemoContent.php:56
 msgid "Rosé wines"
 msgstr ""
 
-#: src/Setup/DemoContent.php:56
+#: src/Setup/DemoContent.php:57
 msgid "Red wines"
 msgstr ""
 
-#: src/Setup/DemoContent.php:57
+#: src/Setup/DemoContent.php:58
 msgid "Dessert wines"
+msgstr ""
+
+#: src/Tables/TableRoutes.php:132
+msgid "Unable to start a wine menu session. Please try again."
+msgstr ""
+
+#: src/Tables/TableRoutes.php:133
+msgid "Session error"
+msgstr ""
+
+#: src/Tables/TableRoutes.php:194
+msgid "Template not found."
 msgstr ""
 
 #: src/Taxonomies/WineCategory.php:43
@@ -287,4 +299,60 @@ msgstr ""
 
 #: src/Taxonomies/WineCategory.php:59
 msgid "&larr; Back to Wine Categories"
+msgstr ""
+
+#: templates/menu.php:22
+#: templates/menu.php:105
+msgid "Wine menu"
+msgstr ""
+
+#: templates/menu.php:104
+msgid "CB Cannavale"
+msgstr ""
+
+#. translators: %s: table number
+#: templates/menu.php:110
+#, php-format
+msgid "Table %s"
+msgstr ""
+
+#: templates/menu.php:117
+msgid "No wines available yet."
+msgstr ""
+
+#: templates/menu.php:132
+msgid "Unavailable"
+msgstr ""
+
+#. translators: %s: bottle price
+#: templates/menu.php:147
+#, php-format
+msgid "Bottle %s"
+msgstr ""
+
+#. translators: %s: glass price
+#: templates/menu.php:159
+#, php-format
+msgid "Glass %s"
+msgstr ""
+
+#: templates/session-expired.php:18
+msgid "Session expired"
+msgstr ""
+
+#: templates/session-expired.php:40
+msgid "Your session has expired."
+msgstr ""
+
+#: templates/session-expired.php:42
+msgid "Please scan the QR code at your table again to access the wine menu."
+msgstr ""
+
+#: templates/table-invalid.php:19
+#: templates/table-invalid.php:41
+msgid "Invalid table"
+msgstr ""
+
+#: templates/table-invalid.php:43
+msgid "This table code is not valid. Please scan the QR code at your table."
 msgstr ""

@@ -1,17 +1,15 @@
-# Copyright (C) 2026 Vincenzo Giordano
-# This file is distributed under the Proprietary.
 msgid ""
 msgstr ""
 "Project-Id-Version: CBC Wine Menu 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/cbc-wine-menu\n"
 "Last-Translator: Vincenzo Giordano <vincenzogiordano99@libero.it>\n"
 "Language-Team: Italian\n"
-"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-09-25T10:42:20+00:00\n"
 "PO-Revision-Date: 2026-09-25 12:45+0200\n"
+"Language: it_IT\n"
 "X-Generator: Cursor\n"
 "X-Domain: cbc-wine-menu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -182,27 +180,27 @@ msgstr "Navigazione elenco vini"
 msgid "Wines list"
 msgstr "Elenco vini"
 
-#: src/Setup/DemoContent.php:52
+#: src/Setup/DemoContent.php:53
 msgid "Sparkling wines"
 msgstr "Spumanti"
 
-#: src/Setup/DemoContent.php:53
+#: src/Setup/DemoContent.php:54
 msgid "Champagne"
 msgstr "Champagne"
 
-#: src/Setup/DemoContent.php:54
+#: src/Setup/DemoContent.php:55
 msgid "White wines"
 msgstr "Vini bianchi"
 
-#: src/Setup/DemoContent.php:55
+#: src/Setup/DemoContent.php:56
 msgid "Rosé wines"
 msgstr "Vini rosati"
 
-#: src/Setup/DemoContent.php:56
+#: src/Setup/DemoContent.php:57
 msgid "Red wines"
 msgstr "Vini rossi"
 
-#: src/Setup/DemoContent.php:57
+#: src/Setup/DemoContent.php:58
 msgid "Dessert wines"
 msgstr "Vini da dessert"
 
@@ -275,3 +273,86 @@ msgstr "Categorie"
 #: src/Taxonomies/WineCategory.php:59
 msgid "&larr; Back to Wine Categories"
 msgstr "&larr; Torna alle categorie vini"
+
+#. Plugin URI of the plugin
+#: cbc-wine-menu.php
+msgid "https://github.com/vinsgiordi/cbc-wine-menu"
+msgstr ""
+
+#. Author of the plugin
+#: cbc-wine-menu.php
+msgid "Vincenzo Giordano"
+msgstr ""
+
+#. Author URI of the plugin
+#: cbc-wine-menu.php
+msgid "https://github.com/vinsgiordi"
+msgstr ""
+
+#: src/Tables/TableRoutes.php:132
+msgid "Unable to start a wine menu session. Please try again."
+msgstr "Impossibile avviare una sessione del menu vini. Riprova."
+
+#: src/Tables/TableRoutes.php:133
+msgid "Session error"
+msgstr "Errore di sessione"
+
+#: src/Tables/TableRoutes.php:194
+msgid "Template not found."
+msgstr "Template non trovato."
+
+#: templates/menu.php:22
+#: templates/menu.php:105
+msgid "Wine menu"
+msgstr "Menu vini"
+
+#. translators: %s: table number
+#: templates/menu.php:110
+#, php-format
+msgid "Table %s"
+msgstr "Tavolo %s"
+
+#: templates/menu.php:117
+msgid "No wines available yet."
+msgstr "Nessun vino disponibile al momento."
+
+#: templates/menu.php:132
+msgid "Unavailable"
+msgstr "Non disponibile"
+
+#. translators: %s: bottle price
+#: templates/menu.php:147
+#, php-format
+msgid "Bottle %s"
+msgstr "Bottiglia %s"
+
+#. translators: %s: glass price
+#: templates/menu.php:159
+#, php-format
+msgid "Glass %s"
+msgstr "Calice %s"
+
+#: templates/session-expired.php:18
+msgid "Session expired"
+msgstr "Sessione scaduta"
+
+#: templates/session-expired.php:40
+msgid "Your session has expired."
+msgstr "La tua sessione è scaduta."
+
+#: templates/session-expired.php:42
+msgid "Please scan the QR code at your table again to access the wine menu."
+msgstr "Scansiona di nuovo il QR code sul tuo tavolo per accedere al menu vini."
+
+#: templates/table-invalid.php:19
+#: templates/table-invalid.php:41
+msgid "Invalid table"
+msgstr "Tavolo non valido"
+
+#: templates/table-invalid.php:43
+msgid "This table code is not valid. Please scan the QR code at your table."
+msgstr "Questo codice tavolo non è valido. Scansiona il QR code sul tuo tavolo."
+
+#: templates/menu.php:104
+msgid "CB Cannavale"
+msgstr ""
